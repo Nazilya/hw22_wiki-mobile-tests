@@ -4,6 +4,7 @@ import guru.qa.tests.TestBase;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
@@ -12,7 +13,8 @@ import static io.appium.java_client.AppiumBy.accessibilityId;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.id;
 
-
+@Owner("Nazilya")
+@Tag("android")
 public class NavBarMenuTests extends TestBase {
     @BeforeEach
     void clickMoreOptionsForOpenNavBarMenu() {
@@ -26,7 +28,7 @@ public class NavBarMenuTests extends TestBase {
         step("Click 'More options' for open NavBar menu", () ->
                 $(accessibilityId("More options")).click());
     }
-    @Owner("Nazilya")
+
     @DisplayName("Check navBar menu button Share")
     @Test
     void checkNavBarMenusShareButtonTest() {
@@ -36,7 +38,7 @@ public class NavBarMenuTests extends TestBase {
         step("Check Share menu elements", () ->
                 $$(id("android:id/text1")).shouldHave(texts("Bluetooth", "Gmail", "Messages", "Drive")));
     }
-    @Owner("Nazilya")
+
     @DisplayName("Check navBar menu button Revision history")
     @Test
     void checkNavBarMenusRevisionHistoryTest() {
@@ -46,7 +48,7 @@ public class NavBarMenuTests extends TestBase {
         step("Check Revision history pages Title", () ->
                 $(id("org.wikipedia.alpha:id/articleTitleView")).should(text("Revision history: BrowserStack")));
     }
-    @Owner("Nazilya")
+
     @DisplayName("Check navBar menu button CustomizeToolbar")
     @Test
     void checkNavBarMenusCustomizeToolbarTest() {
@@ -60,7 +62,7 @@ public class NavBarMenuTests extends TestBase {
                 $$(id("org.wikipedia.alpha:id/listItem")).shouldHave(texts("Save", "Language", "Find in article", "Theme", "Contents",
                         "Share", "Watch", "Talk page", "Edit history", "New tab", "Explore", "Categories","Edit article")));
     }
-    @Owner("Nazilya")
+
     @DisplayName("Check navBar menu button Talk page")
     @Test
     void checkNavBarMenusTalkPageElementTest() {
@@ -70,7 +72,7 @@ public class NavBarMenuTests extends TestBase {
         step("Check Talk pages Title", () ->
                 $(id("org.wikipedia.alpha:id/toolbarTitle")).should(text("Talk: BrowserStack")));
     }
-    @Owner("Nazilya")
+
     @DisplayName("Check navBar menu button Categories")
     @Test
     void checkNavBarMenusCategoriesSubmenuTest() {
@@ -84,7 +86,7 @@ public class NavBarMenuTests extends TestBase {
         $$(id("org.wikipedia.alpha:id/page_list_item_title")).shouldHave(texts("Web development software",
                 "Load testing tools", "Unit testing frameworks","Graphical user interface testing")));
     }
-    @Owner("Nazilya")
+
     @DisplayName("Check navBar menu button Edit History")
     @Test
     void checkNavBarMenusEditHistoryElementTest() {
